@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet} from 'react-native';
 import { Todo } from './src/Todo';
+import { Reddit } from './src/Reddit';
 
 const Main = () => (< Todo />);
 
