@@ -1,31 +1,8 @@
 {
   "todos": [
     {
+      "name": "Test",
       "id": 1
-    },
-    {
-      "name": "Clean",
-      "id": 2
-    },
-    {
-      "name": "Clean",
-      "id": 3
-    },
-    {
-      "name": "Clean",
-      "id": 4
-    },
-    {
-      "name": "Jump rope",
-      "id": 5
-    },
-    {
-      "name": "Kill myself",
-      "id": 6
-    },
-    {
-      "name": "Fly like an eagle",
-      "id": 7
     }
   ]
 }

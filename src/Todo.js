@@ -7,6 +7,14 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { Reddit } from './Reddit';
+import { TodoForm } from './TodoForm';
+import { connect } from 'react-redux';
+
+const mapActionsToProps = (dispatch) => ({
+  createTodo(todo) {
+    dispatch({type: CREATE_TODO, payload: todo})
+  }
+});
 
 export class Todo extends Component {
   constructor(){
@@ -51,20 +59,11 @@ export class Todo extends Component {
   render() {
     return (
       <View>
-        <View style={styles.form}>
-          <Reddit />
-          <TextInput
-            style={styles.input}
-            value={this.state.newTodo}
-            onChangeText={this.handleChange.bind(this)}
-          />
-          <TouchableOpacity
-            style={styles.button}
-            onPress={this.handlePress.bind(this)}
-          >
-            <Text style={styles.buttonText}>Create</Text>
-          </TouchableOpacity>
-        </View>
+        <TodoForm
+          handlePress={this.handlePress.bind(this)}
+          handleChange={this.handleChange.bind(this)}
+          value={this.state.newTodo}
+        />
         <View style={styles.todos}>
           {this.state.todos.map((todo, i) => (
             <View key={i} style={styles.todo}>
@@ -72,35 +71,13 @@ export class Todo extends Component {
             </View>
           ))}
         </View>
-
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  form: {
-    padding: 30,
-    flexDirection: 'row'
-  },
-  input: {
-    flex: 0.7,
-    fontSize: 24
-  },
-  button: {
-    flex: 0.3,
-    height: 50,
-    borderWidth:  1,
-    borderColor: 'blue',
-    borderRadius: 3,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonText: {
-    fontSize: 20,
-    fontWeight: 'bold'
-  },
-  todos: {
+todos: {
     marginTop: 60
   },
   todo: {

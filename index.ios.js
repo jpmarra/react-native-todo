@@ -6,14 +6,14 @@
 
 import React, { Component } from 'react';
 import {AppRegistry, StyleSheet} from 'react-native';
-import { Todo } from './src/Todo';
+import { Main as Root} from './src/Main';
 import { Reddit } from './src/Reddit';
 import { Provider } from 'react-redux';
 import { store } from './src/store';
 
 const Main = () => (
   <Provider store={store}>
-    <Todo />
+    <Root />
   </Provider>
 );
 
